@@ -8,6 +8,7 @@
   },
   "scripts": {
     "mxmlc": "node scripts/build",
+    "start": "node test/public/server",
     "build": "npm run mxmlc --swf_env=development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
