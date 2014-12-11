@@ -10,6 +10,7 @@
     "mxmlc": "node scripts/build",
     "start": "node test/public/server",
     "build": "npm run mxmlc --swf_env=development",
+    "build-vpaid-media-file": "node scripts/build-vpaid-media-file",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tom Buchok <tom@buchok.com> (http://buchok.com/)",
