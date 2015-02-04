@@ -25,10 +25,10 @@ This is not a VAST library. Please see https://github.com/reachfrequencytv/vast-
 
 Please see https://github.com/tbuchok/vast-xml for rendering VAST XML files from objects.
 
-### Tests
+## Tests
 
 Pending.
 
-### Contributors
+## Contributors
 
 Happy to get any help possible.
