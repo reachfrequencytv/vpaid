@@ -14,5 +14,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tom Buchok <tom@buchok.com> (http://buchok.com/)",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "vast-xml": "^1.3.0"
+  }
 }

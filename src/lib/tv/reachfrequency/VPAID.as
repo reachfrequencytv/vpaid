@@ -35,8 +35,8 @@ package tv.reachfrequency {
         null // environmentVars:String
       ];
       ad.initAd.apply(ad, options);
-      ad.addEventListener(VPAIDEvent.AdError, console.log);
-      ad.addEventListener(VPAIDEvent.AdLoaded, function(event:VPAIDEvent) : void {
+      ad.addEventListener(VPAIDEvent.AdError, console.error);
+      ad.addEventListener(VPAIDEvent.AdLoaded, function(event:*) : void {
         ad.startAd();
         addChild(ad);
       });
