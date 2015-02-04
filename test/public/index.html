@@ -5,21 +5,24 @@
   <script type="text/javascript" src="/javascripts/vendor/swfobject.js"></script>
 </head>
 <body>
-  <div id = 'player', data-vast-ad-tag-uri = 'http://demo.tremorvideo.com/proddev/vast/vast2VPAIDLinear.xml'>
-    <p>Loading video content...</p>
+  <div id = 'player', data-vast-ad-tag-uri = '/vast.xml'>
+    <p>loading video content...</p>
   </div>
   <script type="text/javascript">
     ;(function() {
-      var player = document.getElementById('player');
-      vast(player.dataset.vastAdTagUri)
+      var vastAdTagUri = document.querySelector('#player').dataset.vastAdTagUri;
+      if (window.location.port != 80)
+        vastAdTagUri = 'http://localhost:' + window.location.port + vastAdTagUri;
+      vast(vastAdTagUri)
         .on('parsed', function(data) {
+          debugger;
           var options = [
             "/swfs/VPAID.swf",
             "player",
             640,
             360,
             "9.0.0", 
-            "/swfs/vendor/expressInstall.swf",
+            "/swfs/vendor/expressinstall.swf",
             { url: data.ads[0].creatives[0].mediaFiles[0].url }
           ];
           swfobject.embedSWF.apply(null, options);

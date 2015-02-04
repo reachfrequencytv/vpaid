@@ -126,6 +126,10 @@ package tv.reachfrequency {
       video.y = 0;
       addChild(video);
 
+      addEventListener('video:loaded', function(event:Event) : void {
+        dispatchEvent(new VPAIDEvent(VPAIDEvent.AdLoaded));
+      });
+
       netStream.client = { onMetaData: function(data:Object) : void {
           ad.metadata = data;
           dispatchEvent(new Event('video:metadata'));
@@ -133,8 +137,9 @@ package tv.reachfrequency {
         } 
       };
       netStream.addEventListener(NetStatusEvent.NET_STATUS, handleNetStatus);
-      if (ad.videoUrl)
-        netStream.play(ad.videoUrl);
+      var videoUrl:String = root.loaderInfo.parameters.videoUrl;
+      if (videoUrl)
+        netStream.play(videoUrl);
       else
         console.log('No `videoUrl` supplied.');
     }
